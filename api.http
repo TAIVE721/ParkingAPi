@@ -1,0 +1,41 @@
+###get
+GET http://localhost:1234/parkings
+
+###PATCH
+PATCH http://localhost:1234/parkings/1
+Content-Type: application/json
+ 
+{
+    "occupied":false
+}
+
+### DELETE
+DELETE  http://localhost:1234/parkings/67
+
+### POST
+POST http://localhost:1234/parkings
+Content-Type: application/json
+
+{
+    "width": 2,
+    "large": 2,
+    "category": "compact",
+    "vehicle": 0,
+    "occupied": false,
+    "available": true
+    
+}
+
+### cars
+
+###POST 
+POST http://localhost:1234/cars
+Content-Type: application/json
+
+{
+    "category": "compact",
+    "parking": 1
+}
+
+###DELETE
+DELETE http://localhost:1234/cars/1

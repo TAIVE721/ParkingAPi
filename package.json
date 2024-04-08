@@ -1,0 +1,24 @@
+{
+  "name": "parkingapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev:Docker": "docker compose -f docker-compose.yml up",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:P": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/postgres": "^0.8.0",
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "pg": "^8.11.5",
+    "servor": "^4.0.2",
+    "zod": "3.22.4"
+  }
+}
