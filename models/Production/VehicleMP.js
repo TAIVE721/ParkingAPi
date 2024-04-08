@@ -22,7 +22,7 @@ export class VehicleModel {
 
     const { rows } = await pool.query(
       `
-    UPDATE parkings SET vehicle = $1 WHERE id = $2 RETURNING *;
+    UPDATE parkings SET vehicle = $1 ,occupied = true WHERE id = $2 RETURNING *;
     
     `,
       [park.rows[0].id, input.parking]
