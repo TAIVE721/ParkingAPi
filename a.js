@@ -1,13 +1,14 @@
-import { Lector } from "./utils/Rchafa.js";
-const { types } = Lector("pg");
-import { sql } from "@vercel/postgres";
+import pg from "pg";
 
-// Sobrescribir los tipos por defecto
-types.setTypeParser(types.builtins.INT8, "text", parseInt);
-types.setTypeParser(types.builtins.FLOAT8, "text", parseFloat);
-types.setTypeParser(types.builtins.NUMERIC, "text", parseFloat);
+const { Pool, types } = pg;
+types.setTypeParser(types.builtins.INT8, parseInt);
+types.setTypeParser(types.builtins.NUMERIC, parseFloat);
+types.setTypeParser(types.builtins.FLOAT8, parseFloat);
 
 process.loadEnvFile();
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+});
 
 const xd = {
   width: 3,
@@ -20,7 +21,8 @@ const xd = {
 
 export class atp {
   static async GetAll() {
-    const { rows } = await sql`SELECT * FROM parkings WHERE ID = ${1}`;
+    const { rows } = await pool.query("SELECT * FROM parkings");
+
     console.log(rows);
   }
 }
