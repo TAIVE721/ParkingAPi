@@ -5,8 +5,6 @@ types.setTypeParser(types.builtins.INT8, parseInt);
 types.setTypeParser(types.builtins.NUMERIC, parseFloat);
 types.setTypeParser(types.builtins.FLOAT8, parseFloat);
 
-process.loadEnvFile();
-
 const pool = new Pool({
   user: "papusql",
   host: "papusql",
