@@ -9,6 +9,6 @@ jobs:
   hola:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: print
         run: |
           echo "hola mundo"
