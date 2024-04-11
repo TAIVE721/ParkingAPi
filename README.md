@@ -9,3 +9,4 @@
  - Database : parkings
 # The api deployed
  - https://parking-a-pi.vercel.app/parkings 
+## Node : 21.7.1
